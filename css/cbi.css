@@ -1,0 +1,310 @@
+/*** Estilos personalizados de CBI APP ******/
+body{
+  background: transparent !important;
+	background:#38404b !important;  
+}
+.html-pag{
+  width: 94% !important;
+  margin: 2% 2%  !important;
+  border:rgb(56,146,211) solid !important;
+  border-radius: 5px !important;
+}
+
+.logo-login{
+  width: 256px;
+  height: 140px;
+  margin: 0 auto;
+  background: url(../img/login.png) !important;
+  background-position: center center !important;
+  margin-top: 15px;
+  margin-bottom: 10px!important;
+}
+
+.head-app{
+  background: #3892d3 !important;
+  border-color: #3892d3 !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px #000000 !important;
+  margin: 0px 5px 0px 5px !important;
+  border-radius: 15px 15px 0px 0px !important;
+  
+}
+.head-app .btn-sm{
+  margin-top: 3px !important;h
+  padding: 3px 10px !important;
+}
+
+.body-app{
+  margin: -10px 5px 0px 5px !important;
+  padding: 7px 5px 5px 5px !important;
+  border-radius: 0px 0px 10px 10px !important;
+  height:89vh !important;
+  border:rgb(56,146,211) solid !important;
+}
+
+.head-dlg{
+  background: #3892d3 !important;
+  color: #ffffff !important;
+  text-shadow: 1px 1px #000000 !important;
+  border-radius: 15px 15px 0px 0px !important;
+  border-left: 3px solid #3892d3 !important;
+  border-right: 3px solid #3892d3 !important;
+}
+
+.body-dlg{
+  padding: 15px 5px 15px 5px !important;
+  border-radius: 0px 0px 10px 10px !important;
+  border:rgb(56,146,211) solid !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+.footer-dlg{
+  padding: 0px 0px 0px 5px !important;
+  border:rgb(56,146,211) solid !important;
+  border-top:none !important;
+  background: #dfeaf2 !important;
+  margin-top:-8px !important;
+}
+
+.footer-dlg a{
+  background: url(../img/btn1.jpg) !important;
+  background-position: center center !important;
+  border: 1px #126daf solid !important;
+  color: white !important;
+  text-shadow: none !important;
+}
+
+.body-app-dlg{
+  margin: -10px 5px 0px 5px !important;
+  padding: 15px 5px 15px 5px !important;
+  border-radius: 0px 0px 10px 10px !important;
+  border:rgb(56,146,211) solid !important;
+  border-bottom: none !important;
+}
+
+.footer-app-dlg{
+  margin: -8px 5px 0px 5px !important;
+  padding: 0px 0px 0px 5px !important;
+  border:rgb(56,146,211) solid !important;
+  border-top:none !important;
+  background: #dfeaf2 !important;
+}
+
+/*Botones del footer-app-dlg */
+
+.footer-app-dlg a{
+  background: url(../img/btn1.jpg) !important;
+  background-position: center center !important;
+  border: 1px #126daf solid !important;
+  color: white !important;
+  text-shadow: none !important;
+}
+
+/**Estilo de los controloes Y globales**/
+
+.div-center{
+  width: 90% !important;
+  margin:0% 5% auto !important;
+}
+
+.input-group{
+  
+  padding-bottom: 5px;
+}
+
+.input-group-addon {
+  
+}
+
+.input-group-addon .fa{
+  font-size:1.45em;
+}
+
+.form-control{
+  
+}
+
+/*Estilos de Botones*/
+
+.btn-danger{
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important;
+}
+
+.btn1{
+  border: #126daf solid 1px !important;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4397d5+0,4397d5+50,368ece+50,368ece+100 */
+  background: #4397d5; /* Old browsers */
+  background: -moz-linear-gradient(top, #4397d5 0%, #4397d5 50%, #368ece 50%, #368ece 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #4397d5 0%,#4397d5 50%,#368ece 50%,#368ece 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #4397d5 0%,#4397d5 50%,#368ece 50%,#368ece 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4397d5', endColorstr='#368ece',GradientType=0 ); /* IE6-9 */
+  
+  color: white !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important;
+  
+}
+
+.btn1:hover{
+  background: #3d8cc5; /* Old browsers */
+  background: -moz-linear-gradient(top, #3d8cc5 0%, #3d8cc5 50%, #3283be 50%, #3283be 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #3d8cc5 0%,#3d8cc5 50%,#3283be 50%,#3283be 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #3d8cc5 0%,#3d8cc5 50%,#3283be 50%,#3283be 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d8cc5', endColorstr='#3283be',GradientType=0 ); /* IE6-9 */
+  
+}
+
+.btn1:active{
+  background: #276898; /* Old browsers */
+  background: -moz-linear-gradient(top, #276898 0%, #276898 50%, #3675a3 50%, #3675a3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #276898 0%,#276898 50%,#3675a3 50%,#3675a3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #276898 0%,#276898 50%,#3675a3 50%,#3675a3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#276898', endColorstr='#3675a3',GradientType=0 ); /* IE6-9 */
+}
+
+/*ESTILOS PARA EL MENU DE OPCIONES*/
+.menu{ width:100%; padding:0px;margin:0px 0 50px 0;}
+.menu ul{ list-style:none; padding:0px; margin:0px; width:100%;}
+.menu ul li{ list-style:none; margin:1% 0 2% 4%; padding:5.5% 0; width:28%;height:auto; float:left; display:block; text-align:center;
+}
+.menu ul li a{ color:#FFFFFF; text-decoration:none;  text-align: center;} 
+.menu ul li a span{ display:block; text-align:center; font-size:12px; line-height:18px; color:#121212 !important;}
+.menu ul li img{ display:inline-block;max-width:65%;}
+
+/*estilos de popup*/
+
+.msg-urgene{
+  color: #c60000 !important;
+  font-weight: bold !important;
+}
+
+.msg-info{
+  color: #0c82a5 !important;
+}
+
+.cbi-popup{
+  width: 280px !important;
+  padding: 0px !important;
+  border: #3892d3 solid 3px !important;
+}
+
+.cbi-popup .ui-icon-delete{
+  background: red !important;
+}
+
+.cbi-popup .head-popup{
+  background: #3892d3 !important;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important;
+  font-weight: bold;
+  padding: 5px 0px !important;
+}
+
+.cbi-popup .body-popup{
+  padding: 0px 5px !important;
+}
+
+.cbi-popup .foot-popup{
+  background: #dfeaf2 !important;
+  padding: 10px 0px !important;
+  text-align:center !important;
+}
+
+.cbi-popup .foot-popup .btn1{
+  padding: 5px !important;
+  border-radius: 5px !important;
+}
+
+
+
+/*estilos de tablas */
+
+.tab{
+  width: 100% !important;
+  max-width: 100% !important;
+  background-color: transparent;
+  border-spacing: 0 !important;
+  border-collapse: collapse;
+}
+
+.tab-1{
+  margin-top: 10px !important;
+  border: 1px solid #ddd;
+}
+
+.tab-1 > thead > tr > th,
+.tab-1 > tbody > tr > th,
+.tab-1 > tfoot > tr > th,
+.tab-1 > thead > tr > td,
+.tab-1 > tbody > tr > td,
+.tab-1 > tfoot > tr > td{
+  border: 1px solid #ddd;
+}
+
+.tab-1 > tbody > tr > td{
+  height: 35px !important;
+}
+
+.tab-1 > tbody > tr > td:active{
+  background: #d9d9d9 !important;
+}
+
+#dlgDatosAsistente .input-group{
+  padding-bottom: 0px;
+}
+
+#dlgDatosAsistente .form-control{
+  height: 25px;
+  padding: 2px 10px;
+}
+
+.dlg-asist{
+  background: white !important;
+}
+
+.dlg-asist .left{
+  position: relative;
+  width: 38% !important;
+  float: left !important;
+}
+
+.dlg-asist .left label{
+  margin: 0 !important;
+  padding: 0 !important;
+  margin-bottom: -8px !important;
+}
+
+.avatar{
+	background:url(../img/no_photo.png);
+  background-repeat: no-repeat !important;
+	background-size: 100% auto !important;
+  background-position: center center !important;
+  height: 120px !important; 
+}
+
+.dlg-asist .right{
+  position: relative;
+  min-height: 1px;
+  width: 49% !important;
+  float: left !important;
+  margin-bottom: 5px !important;
+}
+
+.dlg-asist .detail textarea{
+  height: 75px !important;
+}
+
+.dlg-asist .demo-dialog{
+  margin-bottom: 5px
+}
+
+.dlg-asist .right .form-control{
+  font-size: 14px !important;  
+  padding: 0px 2px !important;
+}
+
+.dlg-asist .right .input-group-addon{
+  padding: 0px 2px !important;
+  font-size: 10px !important;
+}
