@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>CBI</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="css/cbi.css">
     
@@ -17,6 +18,7 @@
 
     
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script src="js/cbi.js"></script>
@@ -31,7 +33,7 @@
             <div class="logo-login"></div>
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-user"></i></div>
-                <input data-role="none" type="text" class="form-control" id="txtUserName" value="" placeholder="Usuario">
+                <input data-role="none" type="text" class="form-control" id="txtUserName" value="hgomez" placeholder="Usuario">
             </div>
             <div class="input-group">
                 <div class="input-group-addon"><i class="fa fa-lock"></i></div>
@@ -51,7 +53,7 @@
         </div>
         <div data-role="content" class="body-app">
             <div class="menu">
-                <ul class="MenuOpciones">
+                <ul id="MenuOpt" class="MenuOpciones">
                     
                 </ul>
             </div>
@@ -60,19 +62,45 @@
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
             <p class="msgPopUp1"></p>
         </div>
-        <!-- Pop up de roles -->
-        <div data-role="popup" id="popupCargarmodulo" class="ui-content cbi-popup">
-            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
-            <div class="head-popup">Seleccion del Modulo</div>
-            <div class="body-popup">
-            	<select id="cboModulos">
-            		<!--<option value="NO">Seleccione Modulo</option>-->
-            	</select>
-            </div>
-            <div class="foot-popup">
-            	<a class="btn1" id="btnCargraModulo" href="javascript:void(0)">Cargar Modulo</a>
-            </div>
-        </div>
+        <!-- popUp de Convertidos -->
+        <div data-role="popup" id="ConvertidosMentor">
+			<div data-role="header" class="head-dlg">
+				<h1>Convertido</h1>
+			</div>
+			<div data-role="content" class="body-dlg">
+				<span class="input-group demo-input-group">
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+					<input data-role="none" type="text" class="form-control" id="txtNombreCnv" placeholder="Nombre">
+				</span>
+				<span class="input-group demo-input-group">
+					<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+					<input data-role="none" type="nuber" class="form-control" id="txtTelCnv" placeholder="Teléfono">
+				</span>
+				<span class="input-group demo-input-group">
+					<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
+					<input data-role="none" type="text" class="form-control" id="txtDirCnv" placeholder="Dirección">
+				</span>
+				<span class="input-group demo-input-group">
+					<span class="input-group-addon"><i class="fa fa-road"></i></span>
+					<input data-role="none" type="text" class="form-control" id="txtBarrioCnv" placeholder="Barrio">
+				</span>
+				<span class="input-group demo-input-group">
+					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+					<input data-role="none" type="date" class="form-control" id="txtNacCnv" placeholder="nacimiento">
+				</span>
+
+			</div>
+			<div data-role="footer" class="footer-dlg">
+				<div data-inline="true">
+					<a href="#" class="btn btn-danger" data-rel="back"><i class="fas fa-times-circle"></i> Cancelar</a>
+					<a href="#" id="btnAddConvertidoMentor" class="btn btn-success"><i class="far fa-save"></i> Crear</a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupConsoMsg1" style="max-width:280px">
+				<p class="msg-urgene"></p>
+				<p class="msg-info"></p>
+			</div>
+		</div>
     </div>
 </body>
 </html>

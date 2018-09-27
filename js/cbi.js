@@ -1,8 +1,8 @@
 "use strict";
 
 //Declaración de variables
-var archivoValidacion = "http://localhost/cbi/process.php?jsoncallback=?";
-var IdMentor, IdGroup, NameMentor, uID, IdAsist=1, TotalAsist, i, PosSegConv, url,DataUser;
+var archivoValidacion = "192.168.1.66/cbi/process.php?jsoncallback=?";
+var IdMentor, IdGroup, NameMentor, uID, IdAsist=1, TotalAsist, i, PosSegConv, url,DataUser,OPT,aBARRIOS;
 
 //Funciones
 
@@ -12,6 +12,14 @@ function mkLog(text)
 	var txt = "log HG (" + i_log + ") -> " + text;
 	i_log++;
 	console.log(txt);
+}
+
+function CargarBarrios()
+{
+	$.getJSON( archivoValidacion, { ChargeTown:'SET'})
+	.done(function(D) {
+		aBARRIOS=D.barrios;
+	});
 }
 
 function Msg1(txt='')
@@ -29,6 +37,7 @@ function Cargando(txt='Cargando...')
 
 function onBodyLoad(){
 	document.addEventListener("deviceready", onDeviceReady, false);
+	CargarBarrios();
 }
 function onDeviceReady(){
 	uID = device.uuid;
@@ -36,16 +45,26 @@ function onDeviceReady(){
 
 function CargarOpciones(Modulos)
 {
-	mkLog("Cargar los modulos de : " + Modulos);
 	var Cnt='',f;
-	switch(Modulos)
+	mkLog("Cargar los modulos de : " + Modulos);
+	if(Modulos==1)
+	{
+		mkLog("Seleccionado Modulo de Mentores NRO");
+		OPT=['convertidos','asistentes','asistencias','seguimiento'];
+		f=4;
+		mkLog(OPT);
+	}
+
+	/*var Cnt='',f;
+	/*switch(Modulos)
 	{
 		case 1:
-			var OPT=['convertidos','asistentes','asistencias','seguimiento'];
+			
+			$("#MenuOpt").append("<h1>Cnt</h1>");
 			f=4;
 		break;
-	}
-	mkLog(OPT);
+	}*/
+	
 	for(i=0;i<f;i++)
 	{
 		mkLog(i);
@@ -107,8 +126,16 @@ $(document).on("click","#btnLogin",function(){
 	}
 });
 
+//Opiones de los Botones de Mentor
+$(document).on("click","#opt-convertidos",function(){
+	$("#txtBarrioCnv").autocomplete({
+		source: aBARRIOS
+		});
+	$("#ConvertidosMentor").popup( "open" );
+});
+
 //Creacion de Convertido Consolidacion
-$(document).on("click","#btnAddConvertidoConsol",function(){
+$(document).on("click","#btnAddConvertidoMentor",function(){
 	var nombre=$("#txtNombreCnv").val();
 	var telefono=$("#txtTelCnv").val();
 	var direccion=$("#txtDirCnv").val();

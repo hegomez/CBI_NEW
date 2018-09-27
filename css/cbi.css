@@ -46,9 +46,16 @@ body{
   background: #3892d3 !important;
   color: #ffffff !important;
   text-shadow: 1px 1px #000000 !important;
-  border-radius: 15px 15px 0px 0px !important;
+  border-radius: 10px 10px 0px 0px !important;
   border-left: 3px solid #3892d3 !important;
   border-right: 3px solid #3892d3 !important;
+}
+
+#ConvertidosMentor{
+  border-radius: 10px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
 }
 
 .body-dlg{
@@ -59,20 +66,27 @@ body{
   border-top: none !important;
 }
 
+.body-dlg .input-group-addon{
+  font-size: 0.70em !important;
+  width: 40px !important;
+}
+
+.body-dlg .input-group-addon .fa-user{
+  
+}
+
 .footer-dlg{
-  padding: 0px 0px 0px 5px !important;
+  padding: 5px 0px !important;
   border:rgb(56,146,211) solid !important;
   border-top:none !important;
   background: #dfeaf2 !important;
   margin-top:-8px !important;
+  border-radius: 0px 0px 10px 10px !important;
+  text-align: center !important;
 }
 
 .footer-dlg a{
-  background: url(../img/btn1.jpg) !important;
-  background-position: center center !important;
-  border: 1px #126daf solid !important;
-  color: white !important;
-  text-shadow: none !important;
+  width: 45% !important;
 }
 
 .body-app-dlg{
@@ -127,7 +141,7 @@ body{
 
 /*Estilos de Botones*/
 
-.btn-danger{
+.btn{
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important;
 }
 
@@ -307,4 +321,8 @@ body{
 .dlg-asist .right .input-group-addon{
   padding: 0px 2px !important;
   font-size: 10px !important;
+}
+
+.ui-autocomplete{
+  z-index: 10000 !important;
 }
