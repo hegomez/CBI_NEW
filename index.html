@@ -40,6 +40,7 @@
                 <input data-role="none" type="password" class="form-control" id="txtUserPass" value="123" placeholder="Contraseña">
             </div>
             <a href="#" id="btnLogin" class="btn1" data-role="button" data-icon="arrow-r">Ingresar</a>
+            <div id="RecLog"></div>
         </div>
         <div data-role="popup" id="popupLoginMsg" class="ui-content" style="max-width:280px">
             <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
@@ -63,32 +64,31 @@
             <p class="msgPopUp1"></p>
         </div>
         <!-- popUp de Convertidos -->
-        <div data-role="popup" id="ConvertidosMentor">
+        <div data-role="popup" id="ConvertidosMentor" data-dismissible="false">
 			<div data-role="header" class="head-dlg">
 				<h1>Convertido</h1>
 			</div>
 			<div data-role="content" class="body-dlg">
 				<span class="input-group demo-input-group">
 					<span class="input-group-addon"><i class="fa fa-user"></i></span>
-					<input data-role="none" type="text" class="form-control" id="txtNombreCnv" placeholder="Nombre">
+					<input data-role="none" type="text" class="form-control" tabindex="1" id="txtNombreCnv" placeholder="Nombre">
 				</span>
 				<span class="input-group demo-input-group">
 					<span class="input-group-addon"><i class="fa fa-phone"></i></span>
-					<input data-role="none" type="nuber" class="form-control" id="txtTelCnv" placeholder="Teléfono">
+					<input data-role="none" type="nuber" class="form-control" tabindex="2" id="txtTelCnv" placeholder="Teléfono">
 				</span>
 				<span class="input-group demo-input-group">
 					<span class="input-group-addon"><i class="fa fa-map-marker"></i></span>
-					<input data-role="none" type="text" class="form-control" id="txtDirCnv" placeholder="Dirección">
+					<input data-role="none" type="text" class="form-control" tabindex="3" id="txtDirCnv" placeholder="Dirección">
 				</span>
 				<span class="input-group demo-input-group">
 					<span class="input-group-addon"><i class="fa fa-road"></i></span>
-					<input data-role="none" type="text" class="form-control" id="txtBarrioCnv" placeholder="Barrio">
+					<input data-role="none" type="text" class="form-control" tabindex="4" id="txtBarrioCnv" placeholder="Barrio">
 				</span>
 				<span class="input-group demo-input-group">
 					<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-					<input data-role="none" type="date" class="form-control" id="txtNacCnv" placeholder="nacimiento">
+					<input data-role="none" type="date" class="form-control" tabindex="5" id="txtNacCnv" placeholder="nacimiento">
 				</span>
-
 			</div>
 			<div data-role="footer" class="footer-dlg">
 				<div data-inline="true">
@@ -96,10 +96,11 @@
 					<a href="#" id="btnAddConvertidoMentor" class="btn btn-success"><i class="far fa-save"></i> Crear</a>
 				</div>
 			</div>
-			<div data-role="popup" id="popupConsoMsg1" style="max-width:280px">
-				<p class="msg-urgene"></p>
-				<p class="msg-info"></p>
-			</div>
+		</div>
+   		<!-- Pop up d emensajes -->
+   		<div data-role="popup" id="popupConsoMsg1" style="max-width:280px">
+			<p class="msg-urgene"></p>
+			<p class="msg-info"></p>
 		</div>
     </div>
 </body>

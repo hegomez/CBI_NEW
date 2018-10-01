@@ -1,7 +1,7 @@
 "use strict";
 
 //Declaración de variables
-var archivoValidacion = "192.168.1.66/cbi/process.php?jsoncallback=?";
+var archivoValidacion = "http://192.168.1.66/cbi/process.php?jsoncallback=?";
 var IdMentor, IdGroup, NameMentor, uID, IdAsist=1, TotalAsist, i, PosSegConv, url,DataUser,OPT,aBARRIOS;
 
 //Funciones
@@ -12,6 +12,7 @@ function mkLog(text)
 	var txt = "log HG (" + i_log + ") -> " + text;
 	i_log++;
 	console.log(txt);
+	//$("#RecLog").html('<p>' + txt + '</p>');
 }
 
 function CargarBarrios()
@@ -64,7 +65,7 @@ function CargarOpciones(Modulos)
 			f=4;
 		break;
 	}*/
-	
+	$(".MenuOpciones").html('');
 	for(i=0;i<f;i++)
 	{
 		mkLog(i);
@@ -85,6 +86,7 @@ $(document).on("click","#btnLogin",function(){
 	}
 	else
 	{
+		mkLog(archivoValidacion);
 		Cargando();
 		var user=$("#txtUserName").val();
 		var pass=$("#txtUserPass").val();
@@ -131,7 +133,7 @@ $(document).on("click","#opt-convertidos",function(){
 	$("#txtBarrioCnv").autocomplete({
 		source: aBARRIOS
 		});
-	$("#ConvertidosMentor").popup( "open" );
+	$("#ConvertidosMentor").popup("open",{transition:"pop"});
 });
 
 //Creacion de Convertido Consolidacion
@@ -149,20 +151,27 @@ $(document).on("click","#btnAddConvertidoMentor",function(){
 	}
 	else
 	{
-		var CrearConvetido='OK';
-		$.getJSON( archivoValidacion, { CrearConvetido:CrearConvetido,nombre:nombre,direccion:direccion,barrio:barrio,telefono:telefono,cumple:cumple})
+		var CrearConvetidoMentor='OK';
+		IdGroup=window.localStorage.getItem("IdGroup");
+		
+		var idB=barrio.split('-');
+		
+		$.getJSON( archivoValidacion, { CrearConvetidoMentor:CrearConvetidoMentor,IdGroup:IdGroup,nombre:nombre,direccion:direccion,barrio:idB[1],telefono:telefono,cumple:cumple})
 		.done(function(D) {
 			if(D.Rta=='SI')
 			{
-				$("#popupConsoMsg1 .msg-info").html("");
-				$("#popupConsoMsg1 .msg-urgene").text("");
-				$("#popupConsoMsg1 .msg-info").html(D.Det);
-				$("#popupConsoMsg1").popup( "open" );
-				$("#txtNombreCnv").val('');
-				$("#txtTelCnv").val('');
-				$("#txtDirCnv").val('');
-				$("#txtBarrioCnv").val('');
-				$("#txtNacCnv").val('');
+				$("#ConvertidosMentor").popup( "close" );
+				setTimeout(function(){
+					$("#popupConsoMsg1 .msg-info").html("");
+					$("#popupConsoMsg1 .msg-urgene").text("");
+					$("#popupConsoMsg1 .msg-info").html(D.Det);
+					$("#popupConsoMsg1").popup( "open" );
+					$("#txtNombreCnv").val('');
+					$("#txtTelCnv").val('');
+					$("#txtDirCnv").val('');
+					$("#txtBarrioCnv").val('');
+					$("#txtNacCnv").val('');
+				}, 250);
 			}
 			else
 			{
