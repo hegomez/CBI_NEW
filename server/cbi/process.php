@@ -131,6 +131,7 @@
 	}
 ?>
 <?php
+	//var_dump($_GET);
 	if(isset($_GET['jsoncallback']) && !empty($_GET['jsoncallback']))
 	{
 		$array=array();
@@ -157,31 +158,26 @@
 			}
 		}
 		//Creacion de Convertido por Iglesia
-		if(isset($_GET['CrearConvetido']) && !empty($_GET['CrearConvetido']))
+		if(isset($_GET['CrearConvetidoMentor']) && !empty($_GET['CrearConvetidoMentor']))
 		{
 			$array['Rta']='NO';
 			$nombre=prepare($_GET['nombre'],'text',$bd);
 			$telefono=prepare($_GET['telefono'],'text',$bd);
 			$direccion=prepare($_GET['direccion'],'text',$bd);
-			$barrio=prepare($_GET['barrio'],'text',$bd);
+			$barrio=prepare($_GET['barrio'],'int',$bd);
 			$nacimiento=prepare($_GET['cumple'],'date',$bd);
-			if($bd->query("INSERT INTO souls (`nombre`,`telefono`,`direccion`,`barrio`,`nacimiento`) VALUES ($nombre,$telefono,$direccion,$barrio,$nacimiento)"))
+			$grupo=prepare($_GET['IdGroup'],'int',$bd);
+			
+			$id=100;
+			$RSt=$bd->query("SELECT COUNT(`id`) AS TA FROM `asistentes`"); $RWt=$RSt->fetch_assoc();
+			$id+=$RWt['TA'];
+			
+			$bd->query("call NewSoul ($id,$nombre,$telefono,$direccion,$barrio,$grupo,$nacimiento)");
+
+			if($bd->affected_rows>=1)
 			{
 				$array['Rta']='SI';
 				$array['Det']='Asistente Creado Correctamente<br>';
-				$id_soul=mysqli_insert_id($bd);
-				$f=date('Y-m-d');
-				$fecha=prepare($f,'date',$bd);
-				$Det="Visita por Primera vez Servicio";
-				$detalle=prepare($Det,'text',$bd);
-				if($bd->query("INSERT INTO seguimientos (`id_soul`,`fecha`,`detalle`) VALUES ($id_soul,$fecha,$detalle)"))
-				{
-					$array['Det'].='Asistente asignado a las Citas de Seguimiento';
-				}
-				else
-				{
-					$array['Rta']='NO';
-				}
 			}
 		}
 		//Cargar los convertidos que aun no tienen grupo
@@ -204,6 +200,16 @@
 				$id++;
 			}
 			$array['tbody']=$t;
+		}
+		//Carga de los barrios
+		if(isset($_GET['ChargeTown']))
+		{
+			$array['barrios']=array();
+			$RS=$bd->query("SELECT CONCAT(`barrio`,'-',`id`) AS nombre FROM barrio ORDER BY barrio");
+			while($RW=$RS->fetch_assoc())
+			{
+				$array['barrios'][]=$RW['nombre'];
+			}
 		}
 		echo $_GET['jsoncallback'].'('.json_encode($array).')';
 	}

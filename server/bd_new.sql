@@ -45,22 +45,7 @@ CREATE TABLE `asistentes` (
 
 /*Data for the table `asistentes` */
 
-/*Table structure for table `asistentes_copy1` */
-
-DROP TABLE IF EXISTS `asistentes_copy1`;
-
-CREATE TABLE `asistentes_copy1` (
-  `id` int(11) NOT NULL,
-  `t_id` varchar(255) DEFAULT NULL,
-  `n_id` varchar(45) DEFAULT NULL,
-  `nombre` varchar(255) DEFAULT NULL,
-  `telefono` varchar(45) DEFAULT NULL,
-  `direccion` varchar(45) DEFAULT NULL,
-  `grupo` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `asistentes_copy1` */
+insert  into `asistentes`(`id`,`t_id`,`n_id`,`nombre`,`telefono`,`direccion`,`barrio`,`grupo`,`nacimiento`,`escuela`,`escalera`) values (100,NULL,NULL,'Heiner','3217478593','kra 9a no 14a-69',106,100,'1989-03-23',999,999),(101,NULL,NULL,'Loraine gutierrez','3014943570','DÃ­a ha gina',134,100,'1994-10-04',999,999),(102,NULL,NULL,'Heiner','3217478593','kra 9a no 14a-69',106,100,'1989-03-23',999,999),(103,NULL,NULL,'jose','321','calle',154,100,'2000-02-10',999,999),(104,NULL,NULL,'aa','aaa','aaa',102,100,'2000-01-01',999,999),(105,NULL,NULL,'ddd','ddd','dd',130,100,'2000-01-01',999,999),(106,NULL,NULL,'11','11','11',130,100,'2000-01-01',999,999),(107,NULL,NULL,'22','22','22',100,100,'2000-01-01',999,999),(108,NULL,NULL,'f','f','f',101,100,'2000-01-01',999,999);
 
 /*Table structure for table `asitencias` */
 
@@ -88,7 +73,7 @@ CREATE TABLE `barrio` (
 
 /*Data for the table `barrio` */
 
-insert  into `barrio`(`id`,`barrio`) values (100,'20 DE DICIEMBRE'),(101,'23 DE FEBRERO'),(102,'AEROPUERTO'),(103,'ALTAMIRA'),(104,'CORDOBITA'),(105,'CHIMILA'),(106,'EL CARMEN'),(107,'EL CENTRO'),(108,'JARDIN'),(109,'EL PRADO'),(110,'FAUSTINO MOJICA'),(111,'HAWAI'),(112,'JUAN XXIII'),(113,'BANCA DEL FERROCARRIL'),(114,'LA ESPERANZA'),(115,'LAS DELICIAS'),(116,'URB. LA CANDELARIA'),(117,'16 DE JULIO'),(118,'BRISAS DEL RIO'),(119,'ARIGUANI'),(120,'EL RECREO'),(121,'DIVINO NINO'),(122,'EL PORVENIR'),(123,'LA ESTACION'),(124,'GIMNASIO MODERNO'),(125,'EL PROGRESO'),(126,'FRANCISCO DE PAULA'),(127,'JUMBO'),(128,'LA MAGDALENA'),(129,'LA ESMERALDA'),(130,'15 DE DICIEMBRE'),(131,'LAS PALMAS'),(132,'LOMA FRESCA'),(133,'MONTERREY'),(134,'SAN BERNARDO'),(135,'SAN CARLOS'),(136,'SIMON BOLIVAR'),(137,'URB. LAS BRISAS'),(138,'URB. PALERMO'),(139,'URB. PRIMERO DE MAYO'),(140,'URB. VILLA FANNY'),(141,'URB. LOS LAURELES'),(142,'URB. VERA JUDITH'),(143,'VILLA CONTRY'),(144,'LAS TABLITAS'),(145,'SAN JOSE'),(146,'ALFONSO LOPEZ'),(147,'URB. ALAMEDA'),(148,'SAN FERNDANDO'),(149,'SAN NICOLAS'),(150,'URB. EL BRILLANTE'),(151,'PAZ DEL RIO'),(152,'CIUDAD JARDIN'),(153,'URB EL MILAGROSO'),(154,'6 DE ENERO'),(155,'VILLA ESPERANZA'),(156,'URB. SANTA HELENA.');
+insert  into `barrio`(`id`,`barrio`) values (100,'20 DE DICIEMBRE'),(101,'23 DE FEBRERO'),(102,'AEROPUERTO'),(103,'ALTAMIRA'),(104,'CORDOBITA'),(105,'CHIMILA'),(106,'EL CARMEN'),(107,'EL CENTRO'),(108,'JARDIN'),(109,'EL PRADO'),(110,'FAUSTINO MOJICA'),(111,'HAWAI'),(112,'JUAN XXIII'),(113,'BANCA DEL FERROCARRIL'),(114,'LA ESPERANZA'),(115,'LAS DELICIAS'),(116,'URB. LA CANDELARIA'),(117,'16 DE JULIO'),(118,'BRISAS DEL RIO'),(119,'ARIGUANI'),(120,'EL RECREO'),(121,'DIVINO NINO'),(122,'EL PORVENIR'),(123,'LA ESTACION'),(124,'GIMNASIO MODERNO'),(125,'EL PROGRESO'),(126,'FRANCISCO DE PAULA'),(127,'JUMBO'),(128,'LA MAGDALENA'),(129,'LA ESMERALDA'),(130,'15 DE DICIEMBRE'),(131,'LAS PALMAS'),(132,'LOMA FRESCA'),(133,'MONTERREY'),(134,'SAN BERNARDO'),(135,'SAN CARLOS'),(136,'SIMON BOLIVAR'),(137,'URB. LAS BRISAS'),(138,'URB. PALERMO'),(139,'URB. PRIMERO DE MAYO'),(140,'URB. VILLA FANNY'),(141,'URB. LOS LAURELES'),(142,'URB. VERA JUDITH'),(143,'VILLA CONTRY'),(144,'LAS TABLITAS'),(145,'SAN JOSE'),(146,'ALFONSO LOPEZ'),(147,'URB. ALAMEDA'),(148,'SAN FERNDANDO'),(149,'SAN NICOLAS'),(150,'URB. EL BRILLANTE'),(151,'PAZ DEL RIO'),(152,'CIUDAD JARDIN'),(153,'URB EL MILAGROSO'),(154,'6 DE ENERO'),(155,'VILLA ESPERANZA'),(156,'URB. SANTA HELENA.'),(999,'NO EXISTE');
 
 /*Table structure for table `consolidacion` */
 
@@ -154,7 +139,7 @@ CREATE TABLE `escalera` (
 
 /*Data for the table `escalera` */
 
-insert  into `escalera`(`id`,`nivel`) values (100,'ENCUENTRO');
+insert  into `escalera`(`id`,`nivel`) values (100,'ENCUENTRO'),(999,'N/A');
 
 /*Table structure for table `grupos` */
 
@@ -233,7 +218,7 @@ CREATE TABLE `niveles` (
 
 /*Data for the table `niveles` */
 
-insert  into `niveles`(`id`,`nivel`) values (100,'VIDA ABUNDANTE'),(101,'DOULOS');
+insert  into `niveles`(`id`,`nivel`) values (100,'VIDA ABUNDANTE'),(101,'DOULOS'),(999,'N/A');
 
 /*Table structure for table `profesores` */
 
@@ -287,6 +272,27 @@ CREATE TABLE `usuarios` (
 /*Data for the table `usuarios` */
 
 insert  into `usuarios`(`id`,`user`,`pass`,`modulo`) values (100,'hgomez','40bd001563085fc35165329ea1ff5c5ecbdbbeef',1),(101,'bmiranda','40bd001563085fc35165329ea1ff5c5ecbdbbeef',2);
+
+/* Procedure structure for procedure `NewSoul` */
+
+/*!50003 DROP PROCEDURE IF EXISTS  `NewSoul` */;
+
+DELIMITER $$
+
+/*!50003 CREATE DEFINER=`root`@`localhost` PROCEDURE `NewSoul`(
+	IN _id int(11),
+	IN _nombre VARCHAR(255),
+	IN _telefono VARCHAR(45),
+	IN _direccion VARCHAR(45),
+	in _barrio int(11),
+	in _grupo int(11),
+	in _nacimiento varchar(10)
+    )
+BEGIN
+	insert into `asistentes` (`id`,`nombre`,`telefono`,`direccion`,`barrio`,`grupo`,`nacimiento`,`escuela`,`escalera`)
+	values (_id,_nombre,_telefono,_direccion,_barrio,_grupo,_nacimiento,999,999);
+    END */$$
+DELIMITER ;
 
 /*Table structure for table `mentor_grupo` */
 
