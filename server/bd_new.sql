@@ -45,7 +45,7 @@ CREATE TABLE `asistentes` (
 
 /*Data for the table `asistentes` */
 
-insert  into `asistentes`(`id`,`t_id`,`n_id`,`nombre`,`telefono`,`direccion`,`barrio`,`grupo`,`nacimiento`,`escuela`,`escalera`) values (100,NULL,NULL,'Heiner','3217478593','kra 9a no 14a-69',106,100,'1989-03-23',999,999),(101,NULL,NULL,'Loraine gutierrez','3014943570','DÃ­a ha gina',134,100,'1994-10-04',999,999),(102,NULL,NULL,'Heiner','3217478593','kra 9a no 14a-69',106,100,'1989-03-23',999,999),(103,NULL,NULL,'jose','321','calle',154,100,'2000-02-10',999,999),(104,NULL,NULL,'aa','aaa','aaa',102,100,'2000-01-01',999,999),(105,NULL,NULL,'ddd','ddd','dd',130,100,'2000-01-01',999,999),(106,NULL,NULL,'11','11','11',130,100,'2000-01-01',999,999),(107,NULL,NULL,'22','22','22',100,100,'2000-01-01',999,999),(108,NULL,NULL,'f','f','f',101,100,'2000-01-01',999,999);
+insert  into `asistentes`(`id`,`t_id`,`n_id`,`nombre`,`telefono`,`direccion`,`barrio`,`grupo`,`nacimiento`,`escuela`,`escalera`) values (100,NULL,NULL,'ISAAC ARAMENDIS MORENO','3113447155','TRV 15 NO 16-10',100,100,'2001-07-11',999,999),(101,NULL,NULL,'SHIRLY MORALES HURTADO','3002493623','KRA 24 NO 21-18',103,100,'2004-07-24',999,999),(102,NULL,NULL,'YURLEIDIS OSPINO ACOSTA','3025734623','TRV 29 NO 26-18',100,100,'2001-05-25',999,999),(103,NULL,NULL,'MARCELA RIVERA DE LA CERDA','3155304972','CLL 12 NO 12-14',102,100,'2004-09-17',999,999),(104,NULL,NULL,'KARELIS SALAS MERCADO','3022695570','CLL 22 NO 14-20',102,100,'1999-06-30',999,999),(105,NULL,NULL,'SOSLENYS PEREIRA CANTILLO','3053146796','TRV 13 NO 13-15',100,100,'1999-08-22',999,999),(106,NULL,NULL,'DANIEL PONCE LOBO','3047448696','TRV 11 NO 18-22',101,100,'1998-06-11',999,999),(107,NULL,NULL,'NOHEMY GONZALEZ BELTRAN','3042623695','CLL 13 NO 14-10',100,100,'1998-05-28',999,999),(108,NULL,NULL,'LILIANA ALMANZA GUERRERO','3114390164','KRA 19 NO 27-29',100,100,'2001-08-23',999,999),(109,NULL,NULL,'BAYRON MONTENEGRO PEDROZA','3116734598','TRV 18 NO 16-29',100,100,'2002-09-15',999,999),(110,NULL,NULL,'DILIA CERVANTES CASTRO','3113347436','TRV 17 NO 20-22',102,100,'2004-06-21',999,999),(111,NULL,NULL,'JONATAN SANTRICH MORENO','3145200135','TRV 17 NO 19-10',100,100,'2003-05-17',999,999),(112,NULL,NULL,'DIANA ALMANZA GUERRERO','3041239496','CLL 16 NO 21-11',100,100,'2004-08-25',999,999),(113,NULL,NULL,'GRACIELA GALVIS QUINTANA','3103553696','CLL 27 NO 22-11',103,100,'1999-05-12',999,999);
 
 /*Table structure for table `asitencias` */
 
@@ -294,6 +294,22 @@ BEGIN
     END */$$
 DELIMITER ;
 
+/*Table structure for table `cargaasistentes1` */
+
+DROP TABLE IF EXISTS `cargaasistentes1`;
+
+/*!50001 DROP VIEW IF EXISTS `cargaasistentes1` */;
+/*!50001 DROP TABLE IF EXISTS `cargaasistentes1` */;
+
+/*!50001 CREATE TABLE  `cargaasistentes1`(
+ `id` int(11) ,
+ `nombre` varchar(255) ,
+ `telefono` varchar(45) ,
+ `direccion` varchar(45) ,
+ `barrio` int(11) ,
+ `nacimiento` date 
+)*/;
+
 /*Table structure for table `mentor_grupo` */
 
 DROP TABLE IF EXISTS `mentor_grupo`;
@@ -309,6 +325,13 @@ DROP TABLE IF EXISTS `mentor_grupo`;
  `user` varchar(45) ,
  `pass` varchar(45) 
 )*/;
+
+/*View structure for view cargaasistentes1 */
+
+/*!50001 DROP TABLE IF EXISTS `cargaasistentes1` */;
+/*!50001 DROP VIEW IF EXISTS `cargaasistentes1` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `cargaasistentes1` AS select `asistentes`.`id` AS `id`,`asistentes`.`nombre` AS `nombre`,`asistentes`.`telefono` AS `telefono`,`asistentes`.`direccion` AS `direccion`,`asistentes`.`barrio` AS `barrio`,`asistentes`.`nacimiento` AS `nacimiento` from `asistentes` */;
 
 /*View structure for view mentor_grupo */
 

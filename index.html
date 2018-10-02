@@ -103,5 +103,28 @@
 			<p class="msg-info"></p>
 		</div>
     </div>
+    <div data-role="page" id="AsistentesProc">
+        <div data-role="header" class="head-app">
+            <h1>Asistentes</h1>
+            <a href="#" data-rel="back" class="ui-btn-right btn btn-sm btn-danger"><i class="fas fa-sign-out-alt"></i> Atras</a>
+        </div>
+        <div data-role="content" class="body-app">
+            <table id="tblDatosAsistenesGV" class="table table-striped">
+            	<thead>
+            		<tr>
+            			<th colspan="2">Nombre</th>
+            		</tr>
+            	</thead>
+            	<tbody>
+            		
+            	</tbody>
+            </table>
+        </div>
+        <!-- pop up d emensajes -->
+        <div data-role="popup" id="popupAsistentesProcMsg" class="ui-content" style="max-width:280px">
+            <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-left">Close</a>
+            <p class="msgPopUp2"></p>
+        </div>
+    </div>
 </body>
 </html>

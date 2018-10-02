@@ -157,7 +157,19 @@
 				$array["Rta"]='ErrLogin';
 			}
 		}
-		//Creacion de Convertido por Iglesia
+		//Carga de Asistentes de Grupo
+		if(isset($_GET['ChargeAsistentes']))
+		{
+			$array['DATA']='';
+			$array['F']=0;
+			$RS=$bd->query("SELECT `id`,`nombre`,`telefono`,`direccion`,`barrio`,`nacimiento` FROM `asistentes` WHERE `grupo`=".$_GET["IdGroup"]);
+			while($RW=$RS->fetch_assoc())
+			{
+				$array['DATA'][]=array("id"=>$RW['id'],"nombre"=>$RW['nombre'],"direccion"=>$RW['direccion'],"barrio"=>$RW['barrio'],"nacimiento"=>$RW['nacimiento']);
+				$array['F']++;
+			}
+		}
+		//Creacion de Convertido por Mentor
 		if(isset($_GET['CrearConvetidoMentor']) && !empty($_GET['CrearConvetidoMentor']))
 		{
 			$array['Rta']='NO';

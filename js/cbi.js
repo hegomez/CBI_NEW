@@ -136,6 +136,33 @@ $(document).on("click","#opt-convertidos",function(){
 	$("#ConvertidosMentor").popup("open",{transition:"pop"});
 });
 
+
+$(document).on("click","#opt-asistentes",function(){
+	//Cargar los asistentes desde la bd
+	IdGroup=window.localStorage.getItem("IdGroup");
+	$.getJSON( archivoValidacion, { ChargeAsistentes:'SET',IdGroup:IdGroup})
+	.done(function(D) {
+		$("#tblDatosAsistenesGV tbody").html('');
+		var C='';
+		for(i=0;i<D.F;i++)
+		{
+			C = C + '<tr>';
+			C = C + '<td>' + D.DATA[i].nombre + '</td>';
+			C = C + '<td><a href="#" class="chargeAsistenteS btn"><i class="far fa-eye"></i></a></td>';
+			C = C + '</tr>';
+		}
+		$("#tblDatosAsistenesGV tbody").append(C);
+		$.mobile.changePage("#AsistentesProc",{
+ 			transition: "pop"
+		});
+		
+		/*$.mobile.changePage("#AsistentesProc",{
+			role: "dialog",
+ 			transition: "slidedown"
+		});*/
+	});
+});
+
 //Creacion de Convertido Consolidacion
 $(document).on("click","#btnAddConvertidoMentor",function(){
 	var nombre=$("#txtNombreCnv").val();
