@@ -148,9 +148,21 @@ $(document).on("click","#opt-asistentes",function(){
 		{
 			C = C + '<tr>';
 			C = C + '<td>' + D.DATA[i].nombre + '</td>';
-			C = C + '<td><a href="#" class="chargeAsistenteS btn"><i class="far fa-eye"></i></a></td>';
+			C = C + '<td><a ';
+			C = C + 'id="ViewAsist_' + (i+1) + '" ';
+			C = C + 'data-id="' + (i+1) + '" ';
+			C = C + 'data-nombre="'+D.DATA[i].nombre+'" ';
+			C = C + 'data-telefono="'+D.DATA[i].telefono+'" ';
+			C = C + 'data-direccion="'+D.DATA[i].direccion+'" ';
+			C = C + 'data-barrio="'+D.DATA[i].barrio+'" ';
+			C = C + 'data-edad="'+D.DATA[i].edad+'" ';
+			C = C + 'data-cumple="'+D.DATA[i].cumple+'" ';
+			C = C + ' href="#" class="chargeAsistenteS btn"><i class="far fa-eye"></i></a></td>';
 			C = C + '</tr>';
 		}
+		
+		TotalAsist=D.F;
+		
 		$("#tblDatosAsistenesGV tbody").append(C);
 		$.mobile.changePage("#AsistentesProc",{
  			transition: "pop"
@@ -163,6 +175,53 @@ $(document).on("click","#opt-asistentes",function(){
 	});
 });
 
+$(document).on("click",".chargeAsistenteS",function(){
+	IdAsist=$(this).attr('data-id');
+	$("#ViewAsisNom").text($(this).attr("data-nombre"));
+	$("#ViewAsisTel").text($(this).attr("data-telefono"));
+	$("#ViewAsisDir").text($(this).attr("data-direccion"));
+	$("#ViewAsisBar").text($(this).attr("data-barrio"));
+	$("#ViewAsisEda").text($(this).attr("data-edad")+' Años');
+	$("#ViewAsisCum").text($(this).attr("data-cumple"));
+
+	$.mobile.changePage("#dlgAsistentes",{
+		role: "dialog",
+		transition: "slidedown"
+	});
+
+});
+
+$(document).on("click","#AsistPrev",function(){
+	if(IdAsist>1)
+	{
+		IdAsist--;
+		$("#ViewAsisNom").text($("#ViewAsist_"+IdAsist).attr("data-nombre"));
+		$("#ViewAsisTel").text($("#ViewAsist_"+IdAsist).attr("data-telefono"));
+		$("#ViewAsisDir").text($("#ViewAsist_"+IdAsist).attr("data-direccion"));
+		$("#ViewAsisBar").text($("#ViewAsist_"+IdAsist).attr("data-barrio"));
+		$("#ViewAsisEda").text($("#ViewAsist_"+IdAsist).attr("data-edad")+' Años');
+		$("#ViewAsisCum").text($("#ViewAsist_"+IdAsist).attr("data-cumple"));
+	}
+});
+
+$(document).on("click","#AsistNext",function(){
+	if(IdAsist<TotalAsist)
+	{
+		IdAsist++;
+		$("#ViewAsisNom").text($("#ViewAsist_"+IdAsist).attr("data-nombre"));
+		$("#ViewAsisTel").text($("#ViewAsist_"+IdAsist).attr("data-telefono"));
+		$("#ViewAsisDir").text($("#ViewAsist_"+IdAsist).attr("data-direccion"));
+		$("#ViewAsisBar").text($("#ViewAsist_"+IdAsist).attr("data-barrio"));
+		$("#ViewAsisEda").text($("#ViewAsist_"+IdAsist).attr("data-edad")+' Años');
+		$("#ViewAsisCum").text($("#ViewAsist_"+IdAsist).attr("data-cumple"));
+	}
+});
+
+//Intento de llamada numero 1
+
+$(document).on("click","#AsistCall",function(){
+	document.location.href = 'tel:+1-800-555-1234';
+});
 //Creacion de Convertido Consolidacion
 $(document).on("click","#btnAddConvertidoMentor",function(){
 	var nombre=$("#txtNombreCnv").val();

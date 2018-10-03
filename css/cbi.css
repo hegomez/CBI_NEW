@@ -131,9 +131,7 @@ body{
   
 }
 
-.input-group-addon .fa{
-  font-size:1.45em;
-}
+.input-group-addon .fa{ font-size:1.45em; }
 
 .form-control{
   
@@ -325,4 +323,34 @@ body{
 
 .ui-autocomplete{
   z-index: 10000 !important;
+}
+
+#tblDatosAsistenesGV{
+  width: 100% !important;
+}
+
+#tblDatosAsistenesGV td{
+  background: #eeeeee !important;
+  border-bottom: #ffffff solid 2px !important;
+  /*height: 45px !important;*/
+}
+
+.avatar {
+    background: url(../img/no_photo.png) !important;
+    background-size: 115px auto !important;
+    background-position: center center !important;
+    height: 120px !important;
+  background-repeat: no-repeat !important;
+}
+
+/* tabla de aisstentes */
+.tab th { 
+  padding: 1px !important;
+  font-size:16px !important; 
+  text-align: center !important;
+  border-bottom: 1px solid #dedede;
+}
+
+.tab td{
+  border-bottom: 1px solid #dedede;
 }
